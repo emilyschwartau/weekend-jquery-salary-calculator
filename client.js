@@ -37,6 +37,7 @@ annualSalary: $(`#annualSalaryIn`).val()
 employeeList.push(inputObject);
 console.log(employeeList);
 
+//also run these other functions when submit is clicked
 addToDom();
 monthlyCosts();
 console.log(monthlyCosts());
@@ -62,7 +63,7 @@ function addToDom() {
             <td>${inputObject.lastName}</td>
             <td>${inputObject.ID}</td>
             <td>${inputObject.title}</td>
-            <td>${inputObject.annualSalary}</td>
+            <td>${formatCurrency(inputObject.annualSalary)}</td>
             <td><button id="delete">Delete</button></td>
         </tr>
         `);
@@ -78,9 +79,9 @@ function monthlyCosts() {
    for (inputObject of employeeList) {
        totalMonthly += inputObject.annualSalary*1;  
    }//end for
-   
+
    $(`#totalMonthly`).empty();
-   $(`#totalMonthly`).append(`<h2>Total Monthly:<span id = "usd">$${totalMonthly}</span></h2>`);
+   $(`#totalMonthly`).append(`<h2>Total Monthly:<span id = "usd">${formatCurrency(totalMonthly)}</span></h2>`);
 
    //turn background red if over 20k total
    if (totalMonthly > 20000) {
@@ -88,7 +89,7 @@ function monthlyCosts() {
       
    }//end if 
 
-   return totalMonthly;
+   return formatCurrency(totalMonthly);
 }//end monthlyCosts
 
 //function to delete row if delete button is clicked
@@ -96,3 +97,11 @@ function runDeleteClick() {
     console.log("delete click");
     $(this).parent().parent().remove();
 }//end runDeleteClick
+
+function formatCurrency(number) {
+    return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+    maximumFractionDigits: 0,
+    }).format(number);
+  }

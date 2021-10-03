@@ -11,8 +11,10 @@ function readyNow(){
   
 //console.log("jquery working");
 
-//submit click event
+//submit button click event
 $(`#submitButton`).on(`click`, runSubmitClick );
+//delete button click event
+$(`#table`).on(`click`, `#delete`, runDeleteClick);
 
 }//end readyNow
 
@@ -61,7 +63,7 @@ function addToDom() {
             <td>${inputObject.ID}</td>
             <td>${inputObject.title}</td>
             <td>${inputObject.annualSalary}</td>
-            <td><button>Delete</button></td>
+            <td><button id="delete">Delete</button></td>
         </tr>
         `);
         $('#table').append(row);
@@ -80,6 +82,7 @@ function monthlyCosts() {
    $(`#totalMonthly`).empty();
    $(`#totalMonthly`).append(`<h2>Total Monthly:<span id = "usd">$${totalMonthly}</span></h2>`);
 
+   //turn background red if over 20k total
    if (totalMonthly > 20000) {
       $(`#usd`).css("background-color", "red");
       
@@ -87,3 +90,9 @@ function monthlyCosts() {
 
    return totalMonthly;
 }//end monthlyCosts
+
+//function to delete row if delete button is clicked
+function runDeleteClick() {
+    console.log("delete click");
+    $(this).parent().parent().remove();
+}//end runDeleteClick

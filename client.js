@@ -8,11 +8,13 @@ $(document).ready(readyNow);
 //main function for other functions & click events to go in to
 function readyNow(){
     //add main functions to run here
+  
 //console.log("jquery working");
 
 //submit click event
 $(`#submitButton`).on(`click`, runSubmitClick );
 }//end readyNow
+
 
 //make function to add inputs to DOM at click
 function runSubmitClick() {
@@ -30,12 +32,15 @@ annualSalary: $(`#annualSalaryIn`).val()
 
 //add to employeeList
 employeeList.push(inputObject);
-//console.log(employeeList);
+console.log(employeeList);
 
 addToDom();
-
+monthlyCosts();
+console.log(monthlyCosts());
 }//end runSubmitClick
 
+
+//create function to add array to the table on the DOM
 function addToDom() {
     //clear body so it doesn't exponentially add list
     $('#table').empty();
@@ -54,3 +59,17 @@ function addToDom() {
         $('#table').append(row);
     }//end for 
 }//end addToDom
+
+
+//create a function to calculate monthly costs and append to DOM
+
+function monthlyCosts() {
+    let totalMonthly = 0;
+   for (inputObject of employeeList) {
+       totalMonthly += inputObject.annualSalary*1;  
+   }//end for
+   
+   $(`#totalMonthly`).empty();
+   $(`#totalMonthly`).append(`<h2>Total Monthly: $${totalMonthly}</h2>`);
+   return totalMonthly;
+}//end monthlyCosts

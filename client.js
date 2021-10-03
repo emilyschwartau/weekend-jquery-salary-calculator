@@ -13,6 +13,7 @@ function readyNow(){
 
 //submit click event
 $(`#submitButton`).on(`click`, runSubmitClick );
+
 }//end readyNow
 
 
@@ -37,6 +38,13 @@ console.log(employeeList);
 addToDom();
 monthlyCosts();
 console.log(monthlyCosts());
+
+//empty inputs after clicking submit
+$(`#firstNameIn`).val('');
+$(`#lastNameIn`).val('');
+$(`#idIn`).val('');
+$(`#titleIn`).val('');
+$(`#annualSalaryIn`).val('');
 }//end runSubmitClick
 
 

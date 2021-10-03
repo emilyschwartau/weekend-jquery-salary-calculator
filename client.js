@@ -78,6 +78,12 @@ function monthlyCosts() {
    }//end for
    
    $(`#totalMonthly`).empty();
-   $(`#totalMonthly`).append(`<h2>Total Monthly: $${totalMonthly}</h2>`);
+   $(`#totalMonthly`).append(`<h2>Total Monthly:<span id = "usd">$${totalMonthly}</span></h2>`);
+
+   if (totalMonthly > 20000) {
+      $(`#usd`).css("background-color", "red");
+      
+   }//end if 
+
    return totalMonthly;
 }//end monthlyCosts

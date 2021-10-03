@@ -1,5 +1,13 @@
 body {
-    background-color: aquamarine;
+    /* background-color: cornsilk; */
+    border: 1px solid black;
+    width: 60%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#body {
+    background-color: cornsilk;
+    margin: 0px;
 }
 
 table, th, td {
@@ -9,16 +17,77 @@ table, th, td {
 }
 
 table {
-    width: 100%;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    
 }
 
 th {
     width: 16.7%;
     height: 70px;
-    background-color: cadetblue;
+    background-color: #B8C1C1;
+    color: #354347;
 }
 
+tr {
+    width: 16.7%;
+    
+}
 
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+
+tr:nth-child(odd) {
+    background-color: white;
+}
+
+h1 {
+    background-color: #354347;
+    color: cornsilk;
+    padding: 20px;
+    margin-top: 0;
+    text-align: center;
+}
+
+h2 {
+    color: #354347;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    font-size: 25px;
+}
+
+div {
+    margin: 10px;
+}
+
+
+#inputs {
+    text-align: left;
+    
+}
+
+#submit {
+    text-align: right;
+}
+
+#delete {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+td {
+    padding: 10px;
+}
+
+#totalMonthly {
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+    text-align: right;
+    padding-right: 10px;
+  
+}
+

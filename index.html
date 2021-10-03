@@ -10,16 +10,18 @@
     <script src="client.js"></script>
 </head>
 <body>
+    <div id="body">
     <h1>Employee Salary Calculator</h1>
     <h2>Add employee:</h2>
-    <div>
+    <div id="inputs">
         <input id="firstNameIn" type="text" placeholder="First Name">
         <input id="lastNameIn" type="text" placeholder="Last Name">
         <input id="idIn" type="text" placeholder="ID">
         <input id="titleIn" type="text" placeholder="Title">
         <input id="annualSalaryIn" type="number" placeholder="Annual Salary">
     </div>
-    <button id="submitButton">Submit</button>
+    <div id="submit"><button id="submitButton">Submit</button></div>
+    
     <h2>Employees</h2>
     <table>
         <thead>
@@ -29,7 +31,7 @@
                 <th>ID</th>
                 <th>Title</th>
                 <th>Annual Salary</th>
-                <th>Delete Button</th>
+                <th></th>
             </tr>
         </thead>
         <tbody id="table">
@@ -37,6 +39,6 @@
         </tbody>
     </table>
     <h2 id="totalMonthly">Total Monthly:<span id="usd"></span></h2>
-    
+</div>
 </body>
 </html>
